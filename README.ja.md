@@ -25,17 +25,34 @@ Docker がインストールされていること。
 
 
 
-初期セットアップ実施
+### 初期セットアップ
 
 ```
-$ docker run -v (pwd):/docs --rm -it sphinx-docker:latest sphinx-quickstart
+$ docker run -v ${host_docs_directory}:/docs --rm -it sphinx-docker:latest sphinx-quickstart
 ```
 
-ビルドしてプレビュー。
+またはユーティリティスクリプトを使用(init.sh)
+
+- ${host_docs_directory}: dockerにマウントする、ホストOS上のドキュメントディレクトリ
+
+
+```
+$ ./init.sh ${host_docs_directory}
+```
+
+### ビルド/プレビュー
+
+- ${host_docs_directory}: dockerにマウントする、ホストOS上のドキュメントディレクトリ
 
 ```Examples
-$ ./build.sh
-$ ./preview.sh
+$ ./build.sh ${host_docs_directory}
+$ ./preview.sh ${host_docs_directory}
+```
+
+以下のURLでプレビュー確認。
+
+```
+http://127.0.0.1
 ```
 
 ## Authors
