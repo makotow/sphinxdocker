@@ -1,2 +1,5 @@
 #!/bin/bash
-docker run --rm $(pwd):/docs -rm --it sphinx-docker:latest 
+
+doc_dir="$1"
+work_dir="$(pwd)/${doc_dir}"
+docker run -v "${work_dir}":/docs --rm -it sphinx-docker:latest
