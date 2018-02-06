@@ -55,6 +55,21 @@ Show preview following URL.
 http://127.0.0.1
 ```
 
+### Autobuild & Preview
+
+- ${host_docs_directory}: Host os document directory.
+
+Execute folllowing command. After the editing the files, the build is executed automatically.
+
+```Examples
+$ ./autobuild.sh ${host_docs_directory}
+```
+
+Show preview following URL.
+
+```
+http://127.0.0.1:8000
+```
 
 ## Authors
 

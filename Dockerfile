@@ -9,5 +9,6 @@ sphinx-autobuild
 
 RUN mkdir /docs/
 WORKDIR /docs/
+EXPOSE 8000
 
 CMD ["make", "html"]

@@ -55,6 +55,22 @@ $ ./preview.sh ${host_docs_directory}
 http://127.0.0.1
 ```
 
+### 自動ビルド＆プレビュー
+
+- ${host_docs_directory}: dockerにマウントする、ホストOS上のドキュメントディレクトリ
+
+以下のコマンドを実行後、ファイルの編集を行うと自動でビルドが行われる。
+
+```Examples
+$ ./autobuild.sh ${host_docs_directory}
+```
+
+以下の URLでプレビュー。
+
+```
+http://127.0.0.1:8000
+```
+
 ## Authors
 
 - [@makotow](https://github.com/makotow)
