@@ -9,13 +9,14 @@ Dockerized Sphinx
 ## Requirements
 
 - Installed docker.
+- Installed make.
 
 ## Current features
 
-The following features supported via utility script.
+The following features supported via make 
 
 - Setup sphinx project
-- Build and preview
+- Build and preview automatically
 
 
 ## How to use?
@@ -26,43 +27,13 @@ The following features supported via utility script.
 Initilize sphinx directory.
 
 ```
-$ docker run -v ${host_docs_directory}:/docs --rm -it sphinx-docker:latest sphinx-quickstart
-```
-
-or
-
-using utility script which is init.sh.
-
-- ${host_docs_directory}: Host os document directory.
-
-
-```
-$ ./init.sh ${host_docs_directory}
-```
-
-### Build and preview.
-
-- ${host_docs_directory}: Host os document directory.
-
-```Examples
-$ ./build.sh ${host_docs_directory}
-$ ./preview.sh ${host_docs_directory}
-```
-
-Show preview following URL.
-
-```
-http://127.0.0.1
+$ make init
 ```
 
 ### Autobuild & Preview
 
-- ${host_docs_directory}: Host os document directory.
-
-Execute folllowing command. After the editing the files, the build is executed automatically.
-
 ```Examples
-$ ./autobuild.sh ${host_docs_directory}
+$ make auto-build-sphinx
 ```
 
 Show preview following URL.
@@ -70,6 +41,9 @@ Show preview following URL.
 ```
 http://127.0.0.1:8000
 ```
+
+
+
 
 ## Authors
 

@@ -9,7 +9,8 @@ Sphinx をDocker化したもの。
 
 ## 前提条件
 
-Docker がインストールされていること。
+- Docker がインストールされていること。
+- makeが使えること
 
 ## 現在の機能
 
@@ -24,53 +25,27 @@ Docker がインストールされていること。
 初期セットアップ後、各種コマンドを使う。
 
 
-
 ### 初期セットアップ
 
 ```
-$ docker run -v ${host_docs_directory}:/docs --rm -it sphinx-docker:latest sphinx-quickstart
-```
-
-またはユーティリティスクリプトを使用(init.sh)
-
-- ${host_docs_directory}: dockerにマウントする、ホストOS上のドキュメントディレクトリ
-
-
-```
-$ ./init.sh ${host_docs_directory}
-```
-
-### ビルド/プレビュー
-
-- ${host_docs_directory}: dockerにマウントする、ホストOS上のドキュメントディレクトリ
-
-```Examples
-$ ./build.sh ${host_docs_directory}
-$ ./preview.sh ${host_docs_directory}
-```
-
-以下のURLでプレビュー確認。
-
-```
-http://127.0.0.1
+$ make init
 ```
 
 ### 自動ビルド＆プレビュー
 
-- ${host_docs_directory}: dockerにマウントする、ホストOS上のドキュメントディレクトリ
-
-以下のコマンドを実行後、ファイルの編集を行うと自動でビルドが行われる。
-
 ```Examples
-$ ./autobuild.sh ${host_docs_directory}
+$ make auto-build-sphinx
 ```
 
-以下の URLでプレビュー。
+起動後はファイル変更を検知自動ビルド、プレビュー
+
+U以下の URLでプレビュー。
 
 ```
 http://127.0.0.1:8000
 ```
 
+### ビルドだけを死体
 ## Authors
 
 - [@makotow](https://github.com/makotow)
