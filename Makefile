@@ -1,5 +1,5 @@
 # bumpup version here.
-VERSION            := 1.4
+VERSION            := 1.5
 PYTHON_IMAGE       := python:3.7.2-alpine3.9
 SPHINX_VERSION     := 1.8.4
 USER               := makotow
